@@ -42,7 +42,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setViewPager(ViewPager viewPager){
-
+     TabsFragmentsAdpter adapter =new TabsFragmentsAdpter(getSupportFragmentManager());
+     // los tabs
+        adapter.addFragment(new Tab1Fragment(), "Grid View");
+        adapter.addFragment(new Tab2Fragment(), "Recycler View");
+        adapter.addFragment(new Tab3Fragment(), "Card View");
+        viewPager.setAdapter(adapter);
 
     }
 
