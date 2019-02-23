@@ -20,6 +20,8 @@ import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import io.realm.Realm;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -37,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
 
+        Realm realm = Realm.getDefaultInstance();
+        final  Product product= new Product("Carro","Ford","20000");
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                realm.copyFromRealm(product);
+            }
+        });
 
 
     }

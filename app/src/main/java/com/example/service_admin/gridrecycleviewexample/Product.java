@@ -1,6 +1,11 @@
 package com.example.service_admin.gridrecycleviewexample;
 
-class Product {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+public class Product extends RealmObject {
+
+    @PrimaryKey
     String nombre ;
     String descripcion;
 
