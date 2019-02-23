@@ -40,13 +40,13 @@ public class MainActivity extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
 
         Realm realm = Realm.getDefaultInstance();
-        final  Product product= new Product("Carro","Ford","20000");
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                realm.copyFromRealm(product);
-            }
-        });
+//        final  Product product= new Product("Carro","Ford","20000");
+//        realm.executeTransaction(new Realm.Transaction() {
+//            @Override
+//            public void execute(Realm realm) {
+//                realm.copyToRealm(product);
+//            }
+//        });
 
 
     }
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new Tab1Fragment(), "Grid View");
         adapter.addFragment(new Tab2Fragment(), "Recycler View");
         adapter.addFragment(new Tab3Fragment(), "Card View");
+        adapter.addFragment(new Tab4_Fragment(), "Ingreso datos Realm");
         viewPager.setAdapter(adapter);
 
     }

@@ -9,11 +9,17 @@ public class Product extends RealmObject {
     String nombre ;
     String descripcion;
 
+    public Product() {
+
+    }
+
     public Product(String nombre, String descripcion, String precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
     }
+
+
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
